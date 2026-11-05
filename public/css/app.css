@@ -1,0 +1,297 @@
+/* ==========================================================================
+   Variables de diseño
+   ========================================================================== */
+:root {
+  --bg: #e4e8ef;
+  --bg-dots: #c9d0db;
+  --surface: #f4f6fa;
+  --surface-hover: #eef1f7;
+  --text: #1a202c;
+  --text-muted: #4a5568;
+  --border: #b8c0ce;
+  --accent: #3b3a61;
+  --accent-hover: #2c2c2c;
+  --accent-soft: #e8e8f0;
+  --radius: 4px;
+  --radius-btn: 4px;
+  --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.12);
+  --shadow-md: 0 8px 20px rgba(16, 24, 40, 0.2);
+  --shadow-btn: 0 2px 6px rgba(59, 58, 97, 0.45);
+}
+
+/* ==========================================================================
+   Reset y tipografía base
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--bg-dots) 1px, transparent 1px);
+  background-size: 18px 18px;
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+}
+
+/* ==========================================================================
+   Enlaces
+   ========================================================================== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ==========================================================================
+   Contenedor
+   ========================================================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Cabecera
+   ========================================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--text);
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+header nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Grid de productos
+   ========================================================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ==========================================================================
+   Tarjeta de producto
+   ========================================================================== */
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease, background-color 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--accent-hover);
+  background: var(--surface-hover);
+}
+
+/* ==========================================================================
+   Texto dentro de la tarjeta
+   ========================================================================== */
+.product-card h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.product-card .description {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  flex-grow: 1;
+  margin-bottom: 1.75rem;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card .price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.product-card .price::before {
+  content: "€";
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  transform: translateY(-0.15em);
+}
+
+/* ==========================================================================
+   Botones
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius-btn);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: #3b3a61;
+  color: #ffffff;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-primary:hover {
+  background: #2c2c2c;
+  box-shadow: 0 4px 14px rgba(59, 58, 97, 0.6);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #1a3e5c;
+  color: #ffffff;
+  border: 1px solid #14304a;
+}
+
+.btn-secondary:hover {
+  background: #14304a;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background: #1f5c42;
+  color: #ffffff;
+  border: 1px solid #174a35;
+}
+
+.btn-danger:hover {
+  background: #174a35;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Página de detalle
+   ========================================================================== */
+.product-detail {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  max-width: 700px;
+  box-shadow: var(--shadow-sm);
+}
+
+.product-detail h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.9rem;
+  color: var(--text);
+}
+
+.product-detail p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  max-width: 60ch;
+}
+
+.product-detail .price {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+  margin: 1.4rem 0 1rem;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.product-detail .price::before {
+  content: "€";
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  transform: translateY(-0.2em);
+}
+
+.product-detail .stock {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Enlace "Volver"
+   ========================================================================== */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Separador
+   ========================================================================== */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
