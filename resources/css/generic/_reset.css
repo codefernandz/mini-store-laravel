@@ -1,0 +1,10 @@
+/* ==========================================================================
+   RESET GLOBAL
+   Normaliza el comportamiento por defecto de los navegadores.
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

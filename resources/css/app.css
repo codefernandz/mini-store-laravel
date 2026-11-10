@@ -1,9 +1,30 @@
-@import 'tailwindcss';
+/* ==========================================================================
+   ARCHIVO ÍNDICE PRINCIPAL (ITCSS)
+   Punto de entrada de todos los estilos del proyecto.
+   Importa las capas en orden estricto de especificidad (de más general a más
+   específico), evitando el uso de "@import url()" para que Vite unifique todo
+   en un solo archivo y evite peticiones HTTP en cascada.
+   ========================================================================== */
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+/* SETTINGS (Variables globales) */
+@import "./settings/_variables.css";
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
+/* GENERIC (Reset de navegadores) */
+@import "./generic/_reset.css";
+
+/* ELEMENTS (Estilos base de etiquetas HTML) */
+@import "./elements/_base.css";
+
+/* OBJECTS (Estructuras de maquetación abstractas) */
+@import "./objects/_layouts.css";
+
+/* COMPONENTS (Piezas de UI reutilizables) */
+@import "./components/ui/_buttons.css";
+@import "./components/layouts/_container.css";
+@import "./components/layouts/_header.css";
+@import "./components/products/_grid.css";
+@import "./components/products/_card.css";
+@import "./components/cart/_sidebar.css";
+
+/* UTILITIES (Clases de ayuda con !important) */
+@import "./utilities/_helpers.css";

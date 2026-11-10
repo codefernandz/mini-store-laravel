@@ -1,0 +1,10 @@
+/* ==========================================================================
+   CONTENEDOR (CONTAINER)
+   Restringe el ancho máximo del contenido y lo centra en la pantalla.
+   ========================================================================== */
+
+.container {
+    max-width: 1300px; /* Evita que el contenido se estire demasiado en pantallas grandes */
+    margin: 0 auto;    /* Centra el bloque horizontalmente */
+    padding: 2rem;     /* Aire a los lados en pantallas pequeñas */
+}

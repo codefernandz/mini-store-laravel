@@ -1,0 +1,13 @@
+/* ==========================================================================
+   UTILIDADES (HELPERS)
+   Clases con un único propósito, usan !important para ganar siempre.
+   Deben ser mínimas: si una utilidad se repite mucho, conviértela en componente.
+   ========================================================================== */
+
+.u-text-center {
+    text-align: center !important;
+}
+
+.u-hidden {
+    display: none !important;
+}

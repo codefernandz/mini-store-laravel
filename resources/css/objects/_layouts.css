@@ -1,0 +1,19 @@
+/* ==========================================================================
+   LAYOUTS (ESTRUCTURAS ABSTRACTAS)
+   Estructuras de maquetación reutilizables. No tienen estilos visuales (colores,
+   sombras), solo definen cómo se colocan los bloques en la página.
+   ========================================================================== */
+
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Izquierda: catálogo (flexible). Derecha: sidebar (fijo 350px) */
+    gap: 2rem;
+    align-items: start; /* Evita que el sidebar se estire a lo alto del catálogo */
+}
+
+/* Responsive: en pantallas pequeñas, el sidebar baja debajo del catálogo */
+@media (max-width: 900px) {
+    .catalog-layout {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+}

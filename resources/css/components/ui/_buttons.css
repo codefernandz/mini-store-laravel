@@ -1,0 +1,51 @@
+/* ==========================================================================
+   BOTONES (BUTTONS)
+   Estilos base y variantes de botones reutilizables en toda la aplicación.
+   Incluye el estilo base .btn y los modificadores de color y tamaño.
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;              /* Espacio entre icono y texto (si lo hay) */
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;     /* Los <button> no heredan la fuente del body por defecto */
+    transition: background 0.2s;
+}
+
+/* Variante principal (fondo oscuro) */
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Variante secundaria (fondo blanco con borde) */
+.btn-outline {
+    background-color: #fff;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+/* Modificador de tamaño pequeño */
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+/* Botón de "quitar" del carrito (sin fondo, solo texto rojo) */
+.btn-remove {
+    background: none;
+    border: none;
+    color: #ef4444;           /* Rojo de peligro/eliminar */
+    cursor: pointer;
+}

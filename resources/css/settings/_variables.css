@@ -1,0 +1,26 @@
+/* ==========================================================================
+   VARIABLES GLOBALES (DESIGN TOKENS)
+   Centraliza colores, radios y otros valores reutilizables.
+   Si la marca cambia de paleta, solo se edita este archivo.
+   ========================================================================== */
+
+:root {
+    /* Superficies */
+    --bg-body: #f9fafb;
+    --bg-surface: #ffffff;
+
+    /* Texto */
+    --text-main: #111827;
+    --text-muted: #6b7280;
+
+    /* Bordes */
+    --border-color: #e5e7eb;
+
+    /* Marca */
+    --primary: #0f172a;
+    --primary-hover: #1e293b;
+
+    /* Radios */
+    --radius-lg: 16px;
+    --radius-md: 8px;
+}

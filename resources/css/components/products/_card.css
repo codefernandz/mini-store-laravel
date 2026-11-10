@@ -1,0 +1,78 @@
+/* ==========================================================================
+   TARJETA DE PRODUCTO (PRODUCT CARD)
+   Componente visual que muestra un producto en el catálogo.
+   Incluye la imagen, la información (nombre, descripción) y el pie con
+   el precio y el botón de añadir al carrito.
+   ========================================================================== */
+
+.product-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden; /* Recorta la imagen para que respete el border-radius */
+    display: flex;
+    flex-direction: column; /* Permite empujar el precio al fondo */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efecto "elevación" al pasar el ratón */
+.product-card:hover {
+    transform: translateY(-2px); /* Sube ligeramente */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Sombra suave debajo */
+}
+
+.product-image-container {
+    height: 240px;
+    background: #f3f4f6; /* Fondo gris por si la imagen no carga */
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita deformación */
+    display: block;    /* Quita el espacio fantasma debajo de las imágenes inline */
+}
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;      /* Hace que el contenido ocupe el alto disponible */
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.product-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;      /* Empuja el precio y el botón hacia el fondo de la tarjeta */
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;  /* Fuerza a que se quede abajo del todo */
+}
+
+.product-bottom .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Etiqueta de categoría (arriba a la izquierda) */
+.badge {
+    background: #f3f4f6;
+    color: #4b5563;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    margin-bottom: 1rem;
+    align-self: flex-start; /* Evita que el badge ocupe todo el ancho */
+}

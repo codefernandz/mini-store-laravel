@@ -1,0 +1,11 @@
+/* ==========================================================================
+   CUADRÍCULA DE PRODUCTOS (PRODUCT GRID)
+   Organiza las tarjetas de producto de forma responsiva.
+   Calcula automáticamente cuántas columnas caben según el ancho de pantalla.
+   ========================================================================== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}

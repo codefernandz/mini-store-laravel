@@ -1,0 +1,26 @@
+/* ==========================================================================
+   CABECERA DEL SITIO (SITE HEADER)
+   Barra superior con el logo, el título de la tienda y el subtítulo.
+   Contiene el branding principal de la aplicación.
+   ========================================================================== */
+
+.site-header {
+    margin-bottom: 2rem; /* Separación con el contenido principal */
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre el icono SVG y el texto */
+}
+
+.header-logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.header-subtitle {
+    color: var(--text-muted);
+    margin-left: 2.5rem; /* Alinea el subtítulo con el texto del logo, no con el icono */
+    margin-top: 0.2rem;
+}
