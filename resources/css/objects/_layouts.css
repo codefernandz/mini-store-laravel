@@ -17,3 +17,10 @@
         grid-template-columns: 1fr; /* Una sola columna */
     }
 }
+
+/* Título de sección: usado para encabezar bloques de contenido (ej. "Productos Destacados") */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
