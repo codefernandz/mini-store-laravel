@@ -7,10 +7,15 @@
         <span class="badge">Electrónicos</span>
         <h3>{{ $product->name }}</h3>
         <p>{{ $product->description }}</p>
+
         <div class="product-bottom">
-            {{-- Botón deshabilitado --}}
-            <span class="price">{{ number_format($product->price, 2) }}</span>
-            <button class="btn btn-primary btn-sm" disabled>+ Agregar</button>
+            <span class="price">${{ number_format($product->price, 2) }}</span>
+
+            <form action="{{ route('cart.add', $product) }}" method="POST">
+                @csrf
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-primary btn-sm">+ Agregar</button>
+            </form>
         </div>
     </div>
 </div>
