@@ -3,15 +3,13 @@
 
     <div class="catalog-layout">
         <div class="product-grid">
-            {{-- Recorrer la colección de productos del controlador --}}
+            {{-- Recorrer la coleccion de productos del controlador --}}
             @foreach ($products as $product)
                 <x-products.card :product="$product" />
             @endforeach
         </div>
 
-        {{-- Sidebar provisional --}}
-        <div class="cart-sidebar">
-            <p class="empty-cart-text">El carrito estará disponible pronto</p>
-        </div>
+        {{-- Componente reutilizable del sidebar --}}
+        <x-cart.sidebar />
     </div>
 </x-layouts.app>
