@@ -3,9 +3,15 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+/**
+ * Seeder de productos de demo.
+ *
+ * Puebla la tabla 'products' con 10 registros realistas para que el catálogo
+ * tenga contenido desde el primer `php artisan migrate --seed`.
+ * Usamos datos hardcodeados (no Faker).
+ */
 class ProductSeeder extends Seeder
 {
     /**
@@ -86,6 +92,7 @@ class ProductSeeder extends Seeder
             ],
         ];
 
+        // Product::create() respeta el $fillable y rellena timestamps automáticamente.
         foreach ($products as $product) {
             Product::create($product);
         }
